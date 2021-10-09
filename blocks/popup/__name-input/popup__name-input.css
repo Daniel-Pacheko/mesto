@@ -1,0 +1,23 @@
+.popup__name-input {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    margin-left: 36px;
+    margin-top: 54px;
+    width: 358px;
+    border: none;
+    border-bottom: 1px solid rgb(0, 0, 0, 0.2);
+}
+
+@media all and (max-width: 767px) {
+    .popup__name-input  {
+        width: 238px;
+        margin-left: 22px;
+        margin-top: 75px;
+    }
+}
+
+.popup__name-input:focus {
+    outline: none;
+   }
