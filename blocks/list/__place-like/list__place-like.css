@@ -9,6 +9,7 @@
     align-self: center;
     background-color: #fff;
     cursor: pointer;
+    background-repeat: no-repeat;
 }
 
 .list__place-like:hover {
@@ -16,5 +17,5 @@
 }
 
 .list__place-like:focus {
-    background-image: url(../../../images/link\ black.svg);
+    background-image: url(../../../images/linkblack.svg);
 }
