@@ -15,7 +15,3 @@
 .list__place-like:hover {
     opacity: 0.5;
 }
-
-.list__place-like:focus {
-    background-image: url(../../../images/linkblack.svg);
-}

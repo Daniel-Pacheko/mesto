@@ -1,3 +1,5 @@
 .list__place-photo {
     display: block;
+    width: 282px;
+    height: 282px;
 }

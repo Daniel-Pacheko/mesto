@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="Ru">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="./pages/index.css">
     <title>Место</title>
 </head>
+
 <body class="root">
     <div class="page">
         <header class="header">
@@ -18,72 +20,58 @@
                 <div class="profile__info">
                     <h1 class="profile__title">Жак-Ив Кусто</h1>
                     <button type="button" class="profile__button-edit"></button>
-                    <h2 class="profile__subtitle">Исследователь океана</h2> 
+                    <h2 class="profile__subtitle">Исследователь океана</h2>
                 </div>
                 <button type="button" class="profile__button-add"></button>
             </section>
             <section class="lists">
-                <ul class="list">
-                    <li class="list__place">
-                        <img class="list__place-photo" src="./images/Karachayevsk.png" alt="Фото Карачаевск">
-                        <div class="list__place-description">
-                            <h2 class="list__place-title">Карачаевск</h2>
-                            <button type="button" class="list__place-like"></button>
-                        </div>
-                    </li>
-                    <li class="list__place">
-                        <img class="list__place-photo" src="./images/MountElbrus.png" alt="Фото Эльбрус">
-                        <div class="list__place-description">
-                            <h2 class="list__place-title">Гора Эльбрус</h2>
-                            <button type="button" class="list__place-like"></button>
-                        </div>
-                    </li>
-                    <li class="list__place">
-                        <img class="list__place-photo" src="./images/Dombay.png" alt="Фото Домбай">
-                        <div class="list__place-description">
-                            <h2 class="list__place-title">Домбай</h2>
-                            <button type="button" class="list__place-like"></button>
-                        </div>
-                    </li>
-                    <li class="list__place">
-                        <img class="list__place-photo" src="./images/MountElbrus.png" alt="Фото Эльбрус">
-                        <div class="list__place-description">
-                            <h2 class="list__place-title">Гора Эльбрус</h2>
-                            <button type="button" class="list__place-like"></button>
-                        </div>
-                    </li>
-                    <li class="list__place">
-                        <img class="list__place-photo" src="./images/Dombay.png" alt="Фото Домбай">
-                        <div class="list__place-description">
-                            <h2 class="list__place-title">Домбай</h2>
-                            <button type="button" class="list__place-like"></button>
-                        </div>
-                    </li>
-                    <li class="list__place">
-                        <img class="list__place-photo" src="./images/Karachayevsk.png" alt="Фото Карачаевск">
-                        <div class="list__place-description">
-                            <h2 class="list__place-title">Карачаево-Черкесия</h2>
-                            <button type="button" class="list__place-like"></button>
-                        </div>
-                    </li>
-                </ul>
+                <ul class="list"></ul>
             </section>
         </main>
         <footer class="footer">
             <p class="footer__author-name">© 2020. Daniel Pacheco</p>
         </footer>
-        <div class="popup">
+        <div class="popup popup_edit">
             <div class="popup__content">
-                <button type="button" class="popup__close"></button>
+                <button type="button" class="popup__close popup__close_edit"></button>
                 <h2 class="popup__title">Редактировать профиль</h2>
-                <form name="form-profile" class="popup__form">
+                <form name="form-profile" class="popup__form popup__form_edit">
                     <input type="text" class="popup__input popup__input_type_name">
                     <input type="text" class="popup__input popup__input_type_job">
-                    <button type="submit" class="popup__send">Сохранить</button>
+                    <button type="submit" class="popup__send popup__send_edit">Сохранить</button>
                 </form>
             </div>
         </div>
-    </div>  
+        <div class="popup popup_add">
+            <div class="popup__content">
+                <button type="button" class="popup__close popup__close_add"></button>
+                <h2 class="popup__title">Новое место</h2>
+                <form name="form-add" class="popup__form popup__form_add">
+                    <input type="text" placeholder="Название" class="popup__input popup__input_type_title">
+                    <input type="text" placeholder="Ссылка на картинку" class="popup__input popup__input_type_link">
+                    <button type="submit" class="popup__send popup__send_add">Создать</button>
+                </form>
+            </div>
+        </div>
+        <div class="popup-increase">
+            <div class="popup-increase__content">
+                <button type="button" class="popup-increase__close"></button>
+                <img class="popup-increase__photo" src="#" alt="">
+                <h2 class="popup-increase__title"></h2>
+            </div>
+        </div>
+        <template class="template">
+            <li class="list__place">
+                <img class="list__place-photo" src="#" alt="">
+                <button type="button" class="list__place-delete"></button>
+                <div class="list__place-description">
+                    <h2 class="list__place-title"></h2>
+                    <button type="button" class="list__place-like"></button>
+                </div>
+            </li>
+        </template>
+    </div>
     <script src="./script/index.js"></script>
 </body>
+
 </html>
