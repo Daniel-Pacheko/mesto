@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="Ru">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
@@ -31,7 +31,7 @@
         <footer class="footer">
             <p class="footer__author-name">© 2020. Daniel Pacheco</p>
         </footer>
-        <div class="popup popup_edit">
+        <section class="popup popup_edit">
             <div class="popup__content">
                 <button type="button" class="popup__close popup__close_edit"></button>
                 <h2 class="popup__title">Редактировать профиль</h2>
@@ -41,25 +41,25 @@
                     <button type="submit" class="popup__send popup__send_edit">Сохранить</button>
                 </form>
             </div>
-        </div>
-        <div class="popup popup_add">
+        </section>
+        <section class="popup popup_add">
             <div class="popup__content">
                 <button type="button" class="popup__close popup__close_add"></button>
                 <h2 class="popup__title">Новое место</h2>
                 <form name="form-add" class="popup__form popup__form_add">
                     <input type="text" placeholder="Название" class="popup__input popup__input_type_title">
-                    <input type="text" placeholder="Ссылка на картинку" class="popup__input popup__input_type_link">
+                    <input type="url" placeholder="Ссылка на картинку" class="popup__input popup__input_type_link">
                     <button type="submit" class="popup__send popup__send_add">Создать</button>
                 </form>
             </div>
-        </div>
-        <div class="popup-increase">
-            <div class="popup-increase__content">
-                <button type="button" class="popup-increase__close"></button>
-                <img class="popup-increase__photo" src="#" alt="">
-                <h2 class="popup-increase__title"></h2>
+        </section>
+        <section class="popup popup_increase">
+            <div class="popup__content-increase">
+                <button type="button" class="popup__close popup__close_type_increase"></button>
+                <img class="popup__photo-increase" src="#" alt="">
+                <h2 class="popup__title-increase"></h2>
             </div>
-        </div>
+        </section>
         <template class="template">
             <li class="list__place">
                 <img class="list__place-photo" src="#" alt="">

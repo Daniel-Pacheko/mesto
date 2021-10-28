@@ -23,12 +23,11 @@
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__author-name/footer__author-name.css);
 @import url(../blocks/popup/popup.css);
-@import url(../blocks/popup-increase/popup-increase.css);
+@import url(../blocks/popup/_increase/popup_increase.css);
 @import url(../blocks/popup/_is-open/popup_is-open.css);
-@import url(../blocks/popup-increase/__content/popup-increase__content.css);
-@import url(../blocks/popup-increase/__title/popup-increase__title.css);
-@import url(../blocks/popup-increase/__close/popup-increase__close.css);
-@import url(../blocks/popup-increase/__photo/popup-increase__photo.css);
+@import url(../blocks/popup/__content-increase/popup__content-increase.css);
+@import url(../blocks/popup/__photo-increase/popup__photo-increase.css);
+@import url(../blocks/popup/__title-increase/popup__title-increase.css);
 @import url(../blocks/popup/__content/popup__content.css);
 @import url(../blocks/popup/__close/popup__close.css);
 @import url(../blocks/popup/__title/popup__title.css);

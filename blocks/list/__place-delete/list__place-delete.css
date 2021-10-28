@@ -7,7 +7,7 @@
     box-sizing: border-box;
     background-position: center;
     align-self: center;
-    background-color: #fff;
+    background-color: transparent;
     cursor: pointer;
     border-color: transparent;
     position: absolute;

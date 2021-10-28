@@ -1,13 +1,13 @@
 // Попап
 const editPopup = document.querySelector('.popup_edit');
 const addPopup = document.querySelector('.popup_add');
-const increasePopup = document.querySelector('.popup-increase');
+const increasePopup = document.querySelector('.popup_increase');
 //Кнопки
 const editPopupCloseButton = document.querySelector('.popup__close_edit');
 const addPopupCloseButton = document.querySelector('.popup__close_add');
 const editButton = document.querySelector('.profile__button-edit');
 const addButton = document.querySelector('.profile__button-add');
-const increasePopupClose = document.querySelector('.popup-increase__close')
+const increasePopupClose = document.querySelector('.popup__close_type_increase')
 // Форма отправка 
 const editForm = document.querySelector('.popup__form_edit');
 const addForm = document.querySelector('.popup__form_add');
@@ -24,8 +24,8 @@ const listElement = document.querySelector('.list');
 //Элемент шаблона контента
 const templateListCards = document.querySelector('.template').content;
 //Элементы попапа increasePopup
-const increasePhoto = document.querySelector('.popup-increase__photo');
-const increaseTitle = document.querySelector('.popup-increase__title');
+const increasePhoto = document.querySelector('.popup__photo-increase');
+const increaseTitle = document.querySelector('.popup__title-increase');
 //Фото в формате кнопки
 const listPlacePhoto = document.querySelector('.list__place-photo');
 // Масив карточек
@@ -60,13 +60,14 @@ function createCard(listPlaceCard) {
   const placeCard = templateListCards.querySelector('.list__place').cloneNode(true);
   placeCard.querySelector('.list__place-title').textContent = listPlaceCard.name;
   placeCard.querySelector('.list__place-photo').src = listPlaceCard.link;
-  placeCard.querySelector('.list__place-photo').alt = 'Тут должна быть картинка, но что-то пошло не так. Попробуйте ещё раз';
+  placeCard.querySelector('.list__place-photo').alt = `Тут должна быть картинка ${listPlaceCard.name}, но что-то пошло не так. Попробуйте ещё раз`;
   placeCard.querySelector('.list__place-delete').addEventListener('click', deletePlaceCard)
   placeCard.querySelector('.list__place-like').addEventListener('click', likeActive)
   placeCard.querySelector('.list__place-photo').addEventListener('click', (event) => {
-    const imgIncrease = increasePopup.querySelector('.popup-increase__content');
-    imgIncrease.querySelector('.popup-increase__photo').src = listPlaceCard.link;
-    imgIncrease.querySelector('.popup-increase__title').textContent = listPlaceCard.name;
+    const imgIncrease = increasePopup.querySelector('.popup__content-increase');
+    imgIncrease.querySelector('.popup__photo-increase').src = listPlaceCard.link;
+    imgIncrease.querySelector('.popup__photo-increase').alt = `Тут должна быть большая кортинка из карточки ${listPlaceCard.name}, но что-то пошло не так. Попробуйте ещё раз`;
+    imgIncrease.querySelector('.popup__title-increase').textContent = listPlaceCard.name;
     console.log(increasePopup)
     openPopup(increasePopup);
   })
