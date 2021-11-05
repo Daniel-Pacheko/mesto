@@ -35,22 +35,69 @@
             <div class="popup__content">
                 <button type="button" class="popup__close popup__close_edit"></button>
                 <h2 class="popup__title">Редактировать профиль</h2>
-                <form name="form-profile" class="popup__form popup__form_edit">
-                    <input type="text" class="popup__input popup__input_type_name">
-                    <input type="text" class="popup__input popup__input_type_job">
-                    <button type="submit" class="popup__send popup__send_edit">Сохранить</button>
+
+
+                <!-- Ворма редактирования практики -->
+                <form name="form-profile" class="popup__form popup__form_edit" novalidate>
+
+                    <input 
+                    required
+                    minlength="2"
+                    maxlength="40"
+                    type="text" 
+                    id="name-profile"
+                    class="popup__input popup__input_type_name">
+                    <span id="name-profile-error" class="error"></span>
+
+                    <input 
+                    required
+                    minlength="2"
+                    maxlength="200"
+                    type="text" 
+                    id="job-profile"
+                    class="popup__input popup__input_type_job">
+                    <span id="job-profile-error" class="error"></span>
+
+                    <button disabled type="submit" class="popup__send popup__send_edit">Сохранить</button>
                 </form>
+
+                
+
             </div>
         </section>
         <section class="popup popup_add">
             <div class="popup__content">
                 <button type="button" class="popup__close popup__close_add"></button>
                 <h2 class="popup__title">Новое место</h2>
-                <form name="form-add" class="popup__form popup__form_add">
-                    <input type="text" placeholder="Название" class="popup__input popup__input_type_title">
-                    <input type="url" placeholder="Ссылка на картинку" class="popup__input popup__input_type_link">
-                    <button type="submit" class="popup__send popup__send_add">Создать</button>
+
+
+                <!-- Форма добовления картокек-->         
+                <form name="form-add" class="popup__form popup__form_add" novalidate>
+                    <input 
+                    required
+                    minlength="2"
+                    maxlength="30"
+                    type="text" 
+                    id="title-card" 
+                    class="popup__input popup__input_type_title"
+                    placeholder="Название">
+                    <span id="title-card-error" class="error"></span>
+
+                    <input 
+                    required
+                    type="url" 
+                    id="link-card"
+                    class="popup__input popup__input_type_link"
+                    placeholder="Ссылка на картинку">
+                    <span id="link-card-error" class="error"></span>
+
+                    <button disabled type="submit" class="popup__send popup__send_add">Создать</button>
                 </form>
+
+
+
+
+
             </div>
         </section>
         <section class="popup popup_increase">
@@ -72,6 +119,7 @@
         </template>
     </div>
     <script src="./script/index.js"></script>
+    <script src="./script/validate.js"></script>
 </body>
 
 </html>
