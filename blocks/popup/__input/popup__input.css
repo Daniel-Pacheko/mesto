@@ -4,7 +4,7 @@
     font-size: 14px;
     line-height: 17px;
     margin-left: 36px;
-    margin-top: 30px;
+    margin-bottom: 30px;
     width: 358px;
     border: none;
     border-bottom: 1px solid rgb(0, 0, 0, 0.2);
@@ -12,13 +12,13 @@
 }
 
 @media all and (max-width: 767px) {
-    .popup__input  {
+    .popup__input {
         width: 238px;
         margin-left: 22px;
-        padding-bottom: 13px;
+
     }
 }
 
 .popup__input:focus {
     outline: none;
-   }
+}

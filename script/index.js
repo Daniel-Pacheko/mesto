@@ -1,4 +1,5 @@
 // Попап
+const popup = document.querySelector('.popup');
 const editPopup = document.querySelector('.popup_edit');
 const addPopup = document.querySelector('.popup_add');
 const increasePopup = document.querySelector('.popup_increase');
@@ -12,6 +13,7 @@ const increasePopupClose = document.querySelector('.popup__close_type_increase')
 const editForm = document.querySelector('.popup__form_edit');
 const addForm = document.querySelector('.popup__form_add');
 // Инпут
+const input = document.querySelectorAll('.popup__input');
 const nameInput = document.querySelector('.popup__input_type_name');
 const jobInput = document.querySelector('.popup__input_type_job');
 const addTitleInput = document.querySelector('.popup__input_type_title');
@@ -102,17 +104,32 @@ function deletePlaceCard(event) {
 // Функция открытия любого Попапа
 function openPopup(popup) {
   popup.classList.add('popup_is-open');
+  document.addEventListener('keydown', escClosePopup);
 }
 // Функция закрытия любого Попапа
-function closePopup(popup) {
+function closePopup(popup,) {
   popup.classList.remove('popup_is-open');
+  document.removeEventListener('keydown', escClosePopup);
+}
+// Функция закрытия любого Попапа по кнопки ESC
+function escClosePopup(event) {
+  if(event.key === 'Escape') {
+    const popupOpen = document.querySelector('.popup_is-open');
+    closePopup(popupOpen)
+    }
+}
+function overlayClosePopup (event) {
+  if (event.target.classList.contains('popup')) {
+    const popupOpen = document.querySelector('.popup_is-open');
+    closePopup(popupOpen)
+  }
 }
 // Функция: Добавляем в поля Инпут значение из профиля 
 // Вызываем функцию открытия Попапа со значение конкретного попапа
 function handlePopupEdit() {
   nameInput.value = nameProfile.textContent;
   jobInput.value = jobProfile.textContent;
-  openPopup(editPopup);
+  openPopup(editPopup)
 }
 // Функция: Изменяем значения профиля через заполнения инпута в попап
 // Вызываем функцию закрытия Попапа со значение конкретного попапа
@@ -123,9 +140,9 @@ function handleEditForm(event) {
   closePopup(editPopup);
 }
 // Слушаем клик по кнопки открытия попапа редактировать (edit). При клике начинает работать function handlePopupEdit()
-editButton.addEventListener('click', handlePopupEdit);
+editButton.addEventListener('click', function ()  { handlePopupEdit(), setEventListeners(editPopup, config)});
 // Слушаем клик по кнопки открытия попапа добавить карточку (add). 
-addButton.addEventListener('click', () => openPopup(addPopup));
+addButton.addEventListener('click', function ()  { resetForm(addPopup, config), openPopup(addPopup)});
 // Слушаем клик по кнопки закрытия попапа редактировать (edit). 
 editPopupCloseButton.addEventListener('click', () => closePopup(editPopup));
 // Слушаем клик по кнопки закрытия попапа добавить карточку (add). 
@@ -138,3 +155,5 @@ addForm.addEventListener('submit', handleAddForm);
 listPlaceCards.forEach(prependCard)
 // Слушаем клик по кнопки закрытия попапа (increasePopup).
 increasePopupClose.addEventListener('click', () => closePopup(increasePopup));
+document.addEventListener('mouseup', overlayClosePopup);
+enableValidation(config);

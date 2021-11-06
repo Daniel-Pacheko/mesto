@@ -1,7 +1,7 @@
 .popup__send {
     width: 358px;
     height: 50px;
-    margin: 40px auto 37px;
+    margin: 18px auto 37px;
     font-size: 18px;
     line-height: 22px;
     color: #fff;
@@ -16,11 +16,19 @@
         height: 46px;
         font-size: 14px;
         line-height: 17px;
-        margin: 45px auto 25px;
+        margin: 15px auto 25px;
     }
 }
 
 .popup__send:hover {
     opacity: 0.8;
     cursor: pointer;
+}
+
+.popup__send:disabled {
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #000000;
+    opacity: 0.2;
+    cursor: not-allowed;
 }
