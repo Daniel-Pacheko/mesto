@@ -1,5 +1,4 @@
 // Попап
-const popup = document.querySelector('.popup');
 const editPopup = document.querySelector('.popup_edit');
 const addPopup = document.querySelector('.popup_add');
 const increasePopup = document.querySelector('.popup_increase');
@@ -13,7 +12,6 @@ const increasePopupClose = document.querySelector('.popup__close_type_increase')
 const editForm = document.querySelector('.popup__form_edit');
 const addForm = document.querySelector('.popup__form_add');
 // Инпут
-const input = document.querySelectorAll('.popup__input');
 const nameInput = document.querySelector('.popup__input_type_name');
 const jobInput = document.querySelector('.popup__input_type_job');
 const addTitleInput = document.querySelector('.popup__input_type_title');
@@ -105,11 +103,13 @@ function deletePlaceCard(event) {
 function openPopup(popup) {
   popup.classList.add('popup_is-open');
   document.addEventListener('keydown', escClosePopup);
+  document.addEventListener('mouseup', overlayClosePopup);
 }
 // Функция закрытия любого Попапа
 function closePopup(popup,) {
   popup.classList.remove('popup_is-open');
   document.removeEventListener('keydown', escClosePopup);
+  document.removeEventListener('mouseup', overlayClosePopup);
 }
 // Функция закрытия любого Попапа по кнопки ESC
 function escClosePopup(event) {
@@ -155,5 +155,4 @@ addForm.addEventListener('submit', handleAddForm);
 listPlaceCards.forEach(prependCard)
 // Слушаем клик по кнопки закрытия попапа (increasePopup).
 increasePopupClose.addEventListener('click', () => closePopup(increasePopup));
-document.addEventListener('mouseup', overlayClosePopup);
 enableValidation(config);
