@@ -38,9 +38,9 @@
                 <!-- Ворма редактирования практики -->
                 <form name="form-profile" class="popup__form popup__form_edit" novalidate>
                     <input required minlength="2" maxlength="40" type="text" id="name-profile" class="popup__input popup__input_type_name">
-                    <span id="name-profile-error" class="popup__input-error">#</span>
+                    <span id="name-profile-error" class="popup__input-error popup__input-error_title">#</span>
                     <input required minlength="2" maxlength="200" type="text" id="job-profile" class="popup__input popup__input_type_job">
-                    <span id="job-profile-error" class="popup__input-error">#</span>
+                    <span id="job-profile-error" class="popup__input-error popup__input-error_description">#</span>
                     <button type="submit" class="popup__send popup__send_edit">Сохранить</button>
                 </form>
             </div>
@@ -52,9 +52,9 @@
                 <!-- Форма добовления картокек-->
                 <form name="form-add" class="popup__form popup__form_add" novalidate>
                     <input required minlength="2" maxlength="30" type="text" id="title-card" class="popup__input popup__input_type_title" placeholder="Название">
-                    <span id="title-card-error" class="popup__input-error"></span>
+                    <span id="title-card-error" class="popup__input-error popup__input-error_title"></span>
                     <input required type="url" id="link-card" class="popup__input popup__input_type_link" placeholder="Ссылка на картинку">
-                    <span id="link-card-error" class="popup__input-error"></span>
+                    <span id="link-card-error" class="popup__input-error popup__input-error_description"></span>
                     <button type="submit" class="popup__send popup__send_add">Создать</button>
                 </form>
             </div>
