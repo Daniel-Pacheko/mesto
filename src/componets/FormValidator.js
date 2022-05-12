@@ -1,4 +1,5 @@
-export class FormValidator {
+// Класс проверки и работы формы на/c валидность(ю)  
+export default class FormValidator {
     constructor(settings, form) {
         this._form = form
         this.settings = settings
@@ -33,7 +34,6 @@ export class FormValidator {
         errorElement.textContent = '';
     };
 
-
     _checkInputValidity(inputElement) {
         // Проверяем инпут на валидность
         // Если валидный убираем ошибку иначе покажываем ошибку
@@ -59,7 +59,6 @@ export class FormValidator {
         }
     };
 
-
     _setEventListeners() {
         // Вешаем слушатили на ввод в импут 
         this._inputList.forEach((inputElement) => {
@@ -70,7 +69,6 @@ export class FormValidator {
             });
         });
     }
-
 
     enableValidation() {
         this._setEventListeners();
