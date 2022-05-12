@@ -19,7 +19,6 @@ import {
   config
 } from '../utils/constans.js';
 
-
 const cardsSection = new Section({
   items: listPlaceCards,
   renderer: (item) => {
