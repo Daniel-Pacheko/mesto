@@ -4,12 +4,10 @@ export default class Card {
         this._link = link;
         this._templateListCards = templateListCards;
         this._handleCardClick = handleCardClick;
-        this._createCard();
-        this._setEventListeners()
     }
 
     // Создаем карточку
-    _createCard() {
+    createCard() {
         //нашли
         const cardTemplate = document.querySelector(this._templateListCards).content;
         this._placeCard = cardTemplate.querySelector('.list__place').cloneNode(true);
@@ -25,7 +23,7 @@ export default class Card {
     }
 
     //Устанавливаем Слушатели событий 
-    _setEventListeners() {
+    setEventListeners() {
         this._likeButton.addEventListener('click', () => this._likeActive());
         this._deleteButton.addEventListener('click', () => this._deletePlaceCard());
         this._cardImage.addEventListener('click', () => this._handleCardClick(this._name, this._link));

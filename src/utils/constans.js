@@ -1,22 +1,22 @@
 
 //Profile
-export const editButton = document.querySelector('.profile__button-edit'); //Кнопка открытия Поп-апа с формой редактирования профиля
+export const buttonEdit = document.querySelector('.profile__button-edit'); //Кнопка открытия Поп-апа с формой редактирования профиля
 //Cards
 export const listElement = document.querySelector('.list');
 //Popup profile
-export const editForm = document.querySelector('.popup__form_edit'); // Форма редактирования профеля
+export const formEdit = document.querySelector('.popup__form_edit'); // Форма редактирования профеля
 //Popup cards
-export const addPopup = document.querySelector('.popup_add'); //Поп-ап с формой добовления карточек
+export const popupAdd = document.querySelector('.popup_add'); //Поп-ап с формой добовления карточек
 export const popupClose = document.querySelector('.popup__close');
-export const addButton = document.querySelector('.profile__button-add'); //Кнопка открытия Поп-апа с формой добовления карточек
-export const addForm = document.querySelector('.popup__form_add'); // Форма добавления карточки
+export const buttonAdd = document.querySelector('.profile__button-add'); //Кнопка открытия Поп-апа с формой добовления карточек
+export const formAdd = document.querySelector('.popup__form_add'); // Форма добавления карточки
 //Inputs
-export const nameInput = document.querySelector('.popup__input_type_name'); // Поле для заполнения Имени в форме редактирования профиля 
-export const jobInput = document.querySelector('.popup__input_type_job'); // Поле для заполнения Специальности(работы) в форме редактирования профиля
-export const addTitleInput = document.querySelector('.popup__input_type_title'); // Поле для заполнения Название картинки в форме добовления карточек
-export const addLinkInput = document.querySelector('.popup__input_type_link'); // Поле для прикреплении ссылки на картинку в форме добовления карточек
+export const inputName = document.querySelector('.popup__input_type_name'); // Поле для заполнения Имени в форме редактирования профиля 
+export const inputJob = document.querySelector('.popup__input_type_job'); // Поле для заполнения Специальности(работы) в форме редактирования профиля
+export const inputAddTitle = document.querySelector('.popup__input_type_title'); // Поле для заполнения Название картинки в форме добовления карточек
+export const inputAddLink = document.querySelector('.popup__input_type_link'); // Поле для прикреплении ссылки на картинку в форме добовления карточек
 // Переменная increasePopu = Секция увеличение картинки
-export const increasePopup = document.querySelector('.popup_increase');
+export const popupIncrease = document.querySelector('.popup_increase');
 
 export const selectors = {
   listElement: '.list',
