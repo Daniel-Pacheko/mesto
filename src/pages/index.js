@@ -13,8 +13,6 @@ import {
   formAdd,
   inputName,
   inputJob,
-  inputAddTitle,
-  inputAddLink,
   listPlaceCards,
   config
 } from '../utils/constans.js';
