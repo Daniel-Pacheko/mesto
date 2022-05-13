@@ -37,8 +37,8 @@ popupWithImage.setEventListeners();
 
 
 const addCardPopup = new PopupWithForm(selectors.addPopup, 
-  {onSubmitCb: () => {
-    prependCard({name: inputAddTitle.value, link: inputAddLink.value});
+  {onSubmitCb: (data) => {
+    prependCard(data.name, data.link);
     submitCard();
 }});
 addCardPopup.setEventListeners();
@@ -51,8 +51,8 @@ const userInfo = new UserInfo({
 
 
 const editProfilePopup = new PopupWithForm(selectors.editPopup,
-  {onSubmitCb: () => {
-  userInfo.setUserInfo(inputName.value, inputJob.value);
+  {onSubmitCb: (data) => {
+  userInfo.setUserInfo(data.name, data.about);
 }
 });
 editProfilePopup.setEventListeners();
