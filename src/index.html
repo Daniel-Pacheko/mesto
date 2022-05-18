@@ -15,14 +15,17 @@
         </header>
         <main class="content">
             <section class="profile">
-                <img class="profile__avatar" src="<%=require('./images/avatar.png')%>"
-                    alt="Здесь должен быть аватар пользователя">
-                <div class="profile__info">
-                    <h1 class="profile__title">Жак-Ив Кусто</h1>
-                    <button type="button" class="profile__button-edit"></button>
-                    <h2 class="profile__subtitle">Исследователь океана</h2>
+                <div class="profile__avatar-container">
+                    <img class="profile__avatar" src="<%=require('./images/avatar.png')%>"
+                        alt="Здесь должен быть аватар пользователя">
+                    <button class="profile__icon-btn" type="submit" aria-label="редактировать аватар"></button>
                 </div>
-                <button type="button" class="profile__button-add"></button>
+                <div class="profile__info">
+                    <h1 class="profile__title"></h1>
+                    <button type="button" class="profile__button-edit" aria-label="редактировать аватар"></button>
+                    <h2 class="profile__subtitle"></h2>
+                </div>
+                <button type="button" class="profile__button-add" aria-label="добавить"></button>
             </section>
             <section class="lists">
                 <ul class="list"></ul>
@@ -35,23 +38,24 @@
         <!-- Поп-ап по редактированию профеля  -->
         <section class="popup popup_edit">
             <div class="popup__content">
-                <button type="button" class="popup__close popup__close_edit"></button>
+                <button type="button" class="popup__close" aria-label="закрыть"></button>
                 <h2 class="popup__title">Редактировать профиль</h2>
                 <!-- Ворма редактирования практики -->
                 <form name="form-profile" class="popup__form popup__form_edit" novalidate>
                     <input required minlength="2" maxlength="40" type="text" name="name" id="name-profile"
-                        class="popup__input popup__input_type_name">
+                        placeholder="Имя" class="popup__input popup__input_type_name">
                     <span id="name-profile-error" class="popup__input-error popup__input-error_title">#</span>
                     <input required minlength="2" maxlength="200" type="text" name="about" id="job-profile"
-                        class="popup__input popup__input_type_job">
+                        placeholder="О себе" class="popup__input popup__input_type_job">
                     <span id="job-profile-error" class="popup__input-error popup__input-error_description">#</span>
-                    <button type="submit" class="popup__send popup__send_edit">Сохранить</button>
+                    <button type="submit" class="popup__send">Сохранить</button>
                 </form>
             </div>
         </section>
+        
         <section class="popup popup_add">
             <div class="popup__content">
-                <button type="button" class="popup__close popup__close_add"></button>
+                <button type="button" class="popup__close" aria-label="закрыть"></button>
                 <h2 class="popup__title">Новое место</h2>
                 <!-- Форма добовления картокек-->
                 <form name="form-add" class="popup__form popup__form_add" novalidate>
@@ -61,32 +65,54 @@
                     <input required type="url" name="link" id="link-card" class="popup__input popup__input_type_link"
                         placeholder="Ссылка на картинку">
                     <span id="link-card-error" class="popup__input-error popup__input-error_description"></span>
-                    <button type="submit" class="popup__send popup__send_add">Создать</button>
+                    <button type="submit" class="popup__send">Создать</button>
                 </form>
             </div>
         </section>
 
+        <section class="popup popup_type_delete-card">
+            <div class="popup__content">
+                <button class="popup__close" type="button" aria-label="закрыть"></button>
+                <form class="popup__form popup__form_type_delete-card" name="formDeleteCard" novalidate>
+                    <h2 class="popup__title">Вы уверены?</h2>
+                    <button class="popup__send" type="submit">Да</button>
 
+                </form>
+            </div>
+        </section>
+
+        <section class="popup popup_type_avatar">
+            <div class="popup__content">
+                <button class="popup__close" type="button" aria-label="закрыть"></button>
+                <h2 class="popup__title">Обновить аватар</h2>
+                <form class="popup__form popup__form_type_avatar" name="formAvatar" novalidate>
+                    <input class="popup__input popup__input_type_img-avatar" type="url" name="avatar" id="avatar"
+                        placeholder="Ссылка на фотографию" required>
+                    <span class="popup__input-error popup__input-error_title" id="avatar-error">#</span>
+                    <button class="popup__send" type="submit">Сохранить</button>
+                </form>
+            </div>
+        </section>
 
         <!--Секция увеличение картинки-->
         <section class="popup popup_increase">
             <div class="popup__content-increase">
-                <button type="button" class="popup__close popup__close_type_increase"></button>
+                <button type="button" class="popup__close" aria-label="закрыть"></button>
                 <img class="popup__photo-increase" src="#" alt="">
                 <h2 class="popup__title-increase"></h2>
             </div>
         </section>
 
-
-
-
         <template id="card" class="template">
             <li class="list__place">
                 <img class="list__place-photo" src="#" alt="">
-                <button type="button" class="list__place-delete"></button>
-                <div class="list__place-description">
+                <div class="list__caption">
                     <h2 class="list__place-title"></h2>
-                    <button type="button" class="list__place-like"></button>
+                    <div class="list__place-description">
+                        <button type="button" class="list__place-like"></button>
+                        <p class="list__place-counter">0</p>
+                    </div>
+                    <button type="button" class="list__place-delete" aria-label="удалить"></button>
                 </div>
             </li>
         </template>

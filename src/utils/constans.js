@@ -1,4 +1,3 @@
-
 //Profile
 export const buttonEdit = document.querySelector('.profile__button-edit'); //Кнопка открытия Поп-апа с формой редактирования профиля
 //Cards
@@ -17,6 +16,8 @@ export const inputAddTitle = document.querySelector('.popup__input_type_title');
 export const inputAddLink = document.querySelector('.popup__input_type_link'); // Поле для прикреплении ссылки на картинку в форме добовления карточек
 // Переменная increasePopu = Секция увеличение картинки
 export const popupIncrease = document.querySelector('.popup_increase');
+export const profileIconBtn = document.querySelector('.profile__icon-btn');
+export const formAvatar = document.querySelector('.popup__form_type_avatar');
 
 export const selectors = {
   listElement: '.list',
@@ -26,36 +27,11 @@ export const selectors = {
   imageElement: '.popup__photo-increase',
   increaseTitle: '.popup__title-increase',
   profileName: '.profile__title',
-  profileJob: '.profile__subtitle'
+  profileJob: '.profile__subtitle',
+  profileAvatar: '.profile__avatar',
+  popupDelete: '.popup_type_delete-card',
+  popupAvatar: '.popup_type_avatar'
 };
-
-// Масив карточек
-export const listPlaceCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-];
 
 export const config = {
   formSelector: '.popup__form', //все Формы на страницы

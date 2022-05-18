@@ -2,14 +2,13 @@
     background-image: url(../../../images/Like.svg);
     width: 22px;
     height: 19px;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: center;
     border: none;
     outline: none;
-    box-sizing: border-box;
-    background-position: center;
-    align-self: center;
-    background-color: #fff;
     cursor: pointer;
-    background-repeat: no-repeat;
+    align-self: center;
 }
 
 .list__place-like:hover {

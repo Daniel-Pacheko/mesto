@@ -1,7 +1,8 @@
 .list__place {
-    background-color: #fff;
-    width: 282px;
-    border-radius: 10px;
-    overflow: hidden;
     position: relative;
+    list-style-type: none;
+    border-radius: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: #fff;
 }
