@@ -58,8 +58,7 @@ editProfilePopup.setEventListeners();
 const addCardPopup = new PopupWithForm(selectors.addPopup, submitCard);
 addCardPopup.setEventListeners();
 
-const confirmForm = new PopupWithConfirm(selectors.popupDelete, handleCardDelete);
-confirmForm.setEventListeners();
+
 
 const avatarForm = new PopupWithForm(selectors.popupAvatar, submitAvatar);
 avatarForm.setEventListeners();
@@ -67,20 +66,24 @@ avatarForm.setEventListeners();
 const popupWithImage = new PopupWithImage({popupSelector: selectors.increasePopup});
 popupWithImage.setEventListeners();
 
+
+
+const confirmForm = new PopupWithConfirm(selectors.popupDelete, handleCardDelete);
+confirmForm.setEventListeners();
+
 function openCardDelete(card) {
   confirmForm.open(card);
 }
 
-function handleCardDelete() {
-  api.deleteCard(this._card._cardId)
+function handleCardDelete(card) {
+  api.deleteCard(card.cardId)
     .then(() => {
-      this._card.removeCard();
+      card.removeCard();
       confirmForm.close();
     })
     .catch((err) => {
       console.log(err);
     })
-    
 }
 
 function submitAvatar(inputs) {
@@ -127,12 +130,11 @@ function submitCard(inputs) {
   .finally(() => {
     addCardPopup.offLoading(true);
   })
+  addCardPopup.close();
 }
 
 function prependCard(item) {
   const card = new Card(item.name, item.link, item.owner, item.likes,  userInfo.getId(), item._id, '#card', handleCardClick, handleCardLike, openCardDelete);
-  card.createCard();
-  card.setEventListeners();
   return card.render();
 }
 
@@ -142,7 +144,7 @@ function handleCardClick(name, link) {
 
 function handleCardLike(card) {
   if (card.hasLiked()) {
-    api.removeLike(card._cardId)
+    api.removeLike(card.cardId)
     .then((res) => {
       
     card.likes = res.likes;
@@ -152,7 +154,7 @@ function handleCardLike(card) {
     console.log(err);
   })
   }else {
-    api.addLike(card._cardId)
+    api.addLike(card.cardId)
     .then((res) => {
       console.log(res);
     card.likes = res.likes;

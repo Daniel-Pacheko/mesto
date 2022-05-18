@@ -1,11 +1,16 @@
 import Popup from './Popup.js';
-import { selectors } from '../utils/constans.js'
 
 export default class PopupWithImage extends Popup {
+  constructor(popupSelector) {
+    super(popupSelector);
+    this._imageIncrease = this._popup.querySelector('.popup__photo-increase')
+    this._titleIncrease = this._popup.querySelector('.popup__title-increase')
+  }
+
   open = (name, link) => {
-    this._popup.querySelector(selectors.imageElement).src = link;
-    this._popup.querySelector(selectors.imageElement).alt = name;
-    this._popup.querySelector(selectors.increaseTitle).textContent = name;
+    this._imageIncrease.src = link;
+    this._imageIncrease.alt = name;
+    this._titleIncrease.textContent = name;
 
     super.open()
   }
