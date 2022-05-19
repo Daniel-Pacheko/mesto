@@ -130,7 +130,6 @@ function submitCard(inputs) {
   .finally(() => {
     addCardPopup.offLoading(true);
   })
-  addCardPopup.close();
 }
 
 function prependCard(item) {
